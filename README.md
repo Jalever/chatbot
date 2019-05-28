@@ -8,6 +8,7 @@
 - clean-webpack-loader html-webpack-loader
 - typescript awesome-typescript-loader source-map-loader
 - style-loader css-loader node-sass sass-loader
+- @typed/node-sass
 
 #### `.babelrc` file
 ```js
