@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress --color --open",
-    "build": "webpack --progress --color"
+    "start": "webpack-dev-server --progress --color",
+    "build": "webpack --progress --color",
+    "serve": "serve -s dist"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +29,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "sass-loader": "^7.1.0",
+    "serve": "^11.0.1",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
     "typescript": "^3.4.5",

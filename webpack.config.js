@@ -19,6 +19,7 @@ module.exports = {
         hot: true,
         host: "localhost",
         port: "8802",
+        open: true,
         historyApiFallback: true
     },
     module: {
