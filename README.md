@@ -1,5 +1,10 @@
 ## chatbot
 
+## Updates
+#### May 30, 2019
+- `@types/react-redux`
+
+
 ## dependencies
 - webpack webpack-cli
 - webpack-dev-server

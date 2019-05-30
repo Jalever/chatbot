@@ -12,7 +12,6 @@ ENV PATH /root/node_modules/.bin:$PATH
 COPY package.json /root/package.json
 COPY . /root/.
 
-
 RUN npm install --silent
 
 EXPOSE 5000

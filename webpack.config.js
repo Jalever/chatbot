@@ -45,8 +45,8 @@ module.exports = {
             test: /\.(svg|gif|png|jpg)$/,
             use: ["file-loader"]
         }, {
-            test: /\.tsx?$/,
-            use: "awesome-typescript-loader"
+            test: /\.(ts|tsx)$/,
+            use: "ts-loader"
         },{
             enforce: "pre",
             test: /\.js$/,
@@ -68,10 +68,10 @@ module.exports = {
         }
     },
     resolve: {
+        extensions: [".ts", ".tsx", ".js"],
         alias: {
             "@": path.resolve(__dirname, "src")
-        },
-        extensions: [".tsx", ".ts", ".js"]
+        }
     }
 };
 

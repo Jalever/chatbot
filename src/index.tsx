@@ -1,18 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-import { Hello } from "./Layouts/App";
+import App from "./Layouts/App";
+import configureStore from "./store/store";
 
-const App = () => {
-    return(
-        <Hello
-            compiler="Youtube"
-            framework="Google"
-        />
-    );
-};
+const store = configureStore();
 
 ReactDOM.render(
-    <App/>,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById("root")
 );
