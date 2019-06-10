@@ -2,9 +2,9 @@ const path = require("path");
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    mode: "development",
     entry: {
         app: "./src/index.tsx"
     },
@@ -16,42 +16,38 @@ module.exports = {
     devtool: "inline-source-map",
     devServer: {
         contentBase: path.resolve(__dirname, "dist"),
-        hot: true,
-        host: "localhost",
-        port: "8802",
-        open: true,
-        historyApiFallback: true
+        hot: true
     },
     module: {
-        rules: [{
-            test: /\.jsx$/,
-            exclude: /node_modules/,
-            use: ["babel-loader"]
-        },{
-            test: /\.scss$/,
-            loader: [{
-                loader: "style-loader"
+        rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },{
+                        loader: "css-modules-typescript-loader"
+                    },{
+                        loader: "css-loader",
+                        options: {
+                            modules: true,
+                            sourceMap: true,
+                            localIdentName: "[local]___[hash:base64:5]"
+                        }
+                    },{
+                        loader: "sass-loader"
+                    }
+                ]
             },{
-                loader: "css-loader",
-                options: {
-                    modules: true,
-                    sourceMap: true,
-                    localIdentName: "[local]___[hash:base64:5]"
-                }
-            },{
-                loader: "sass-loader"
-            }]
-        }, {
-            test: /\.(svg|gif|png|jpg)$/,
-            use: ["file-loader"]
-        }, {
-            test: /\.(ts|tsx)$/,
-            use: "ts-loader"
-        },{
-            enforce: "pre",
-            test: /\.js$/,
-            use: "source-map-loader"
-        }]
+                test: /\.tsx?$/,
+                use: ["awesome-typescript-loader"]
+            },
+            {
+                enforce: "pre",
+                test: /\.js$/,
+                use: ["source-map-loader"]
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -68,11 +64,9 @@ module.exports = {
         }
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js"],
         alias: {
             "@": path.resolve(__dirname, "src")
-        }
+        },
+        extensions: [".ts", ".tsx", ".js", ".json", ".scss", ".css"]
     }
 };
-
-

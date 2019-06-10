@@ -1,15 +1,25 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
 
-import App from "./Layouts/App";
-import configureStore from "./store/store";
+import { Hello } from "./components/hello";
+import * as styles from "./style.scss";
+import Header from "@/components/Header/index";
 
-const store = configureStore();
+const App = () => {
+    return(
+        <>
+            <Header />
+            <Hello 
+                compiler="youtube"
+                framework="Jalever"
+            />
+            <h1 className={styles.hello}>Hello World!</h1>
+        </>
+    );
+};
+
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
+    <App/>,
     document.getElementById("root")
 );
