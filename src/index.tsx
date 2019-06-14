@@ -1,25 +1,23 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
-import { Hello } from "./components/hello";
 import * as styles from "./style.scss";
-import Header from "@/components/Header/index";
+import Header from "@components/Header/index";
+
+import Footer from "@components/Footer/index";
+
 
 const App = () => {
     return(
         <>
             <Header />
-            <Hello 
-                compiler="youtube"
-                framework="Jalever"
-            />
-            <h1 className={styles.hello}>Hello World!</h1>
+
+            <Footer />
         </>
     );
 };
 
 
 ReactDOM.render(
-    <App/>,
+    <App />,
     document.getElementById("root")
 );
