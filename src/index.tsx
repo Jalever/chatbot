@@ -1,26 +1,17 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import * as styles from "./style.scss";
-import Header from "@components/Header/index";
+import { Provider } from "react-redux";
+import * as styles from "./styles.scss";
 
-import Footer from "@components/Footer/index";
-import Hello from "@components/Hello/index";
+import App from "@layout/App";
 
-const App = () => {
-    return(
-        <>
-            <Header />
-                <Hello 
-                    compiler="youtube"
-                    framework="google"
-                />
-            <Footer />
-        </>
-    );
-};
+import Store from "@store/index";
 
+const configureStore = Store();
 
 ReactDOM.render(
-    <App />,
+    <Provider store={configureStore}>
+        <App />
+    </Provider>,
     document.getElementById("root")
 );
