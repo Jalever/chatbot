@@ -12,6 +12,8 @@ import UserInput from "@components/UserInput/index";
 import { SendMessage } from "@store/actions/chat";
 import { UpdateSession } from "@store/actions/system";
 
+import * as styles from "./styles.scss";
+
 const {
     useState,
     useEffect
@@ -45,7 +47,9 @@ const App:React.FunctionComponent<AppProps> = (props: AppProps) => {
 
     return (
         <React.Fragment>
-            <div>
+            <div
+                className={styles.chatbot}
+            >
                 <UserDialogue
                     messages={ props.chat.messages }
                 />

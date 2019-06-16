@@ -1,0 +1,37 @@
+p {
+    margin: 0;
+    padding: 0;
+}
+.userDialogue {
+    min-height: calc(100vh - 5.2rem);
+    padding: 1rem;
+    // background-color: #00ffff;
+    // border: 1px solid #000;
+}
+
+.messageItem {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    // border-top: 1px solid #000;
+    // border-bottom: 1px solid #000;
+    // background-color: #E6E6FA;
+
+    &>.username {
+        width: 100%;
+        color: #000;
+        // background-color: #DEB887;
+    }
+
+    &>.message {
+        width: calc(100% - 1.9rem);
+        background-color: #fff;
+        margin-top: .5rem;
+        padding:1rem;
+        border-radius: 1rem;
+        display: inline-block;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+}

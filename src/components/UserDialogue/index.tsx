@@ -1,19 +1,26 @@
 import * as React from "react";
 import { ChatState } from "@type/states/chat";
+import * as styles from "./styles.scss";
 
 const UserDialogue: React.FunctionComponent<ChatState> = (props: ChatState) => {
     let { messages } = props;
 
     return(
         <React.Fragment>
-            <div>
+            <div
+                className={styles.userDialogue}
+            >
                 {
                     messages.map(item => {
                         return <div
+                            className={styles.messageItem}
                             key={ `${item.timestamp}` }
                         >
-                            <span>{ item.username }</span>
-                            <p>{ item.message }</p>
+                            <p className={styles.username}>{ item.username }</p>
+                            <p
+                                className={styles.message}>
+                                { item.message }
+                            </p>
                         </div>
                     })
                 }

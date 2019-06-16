@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as styles from "./styles.scss";
 
 import { UserInputProps } from "@type/componentprops/UserInput";
 
@@ -10,29 +11,27 @@ const UserInput: React.FunctionComponent<UserInputProps> = (props: UserInputProp
         updatemessage
     } = props;
 
-    let handleSendMessage = () => {
-        sendmessage(message);
-    };
-
     let handleKeyPress = (e: React.KeyboardEvent<any>) => {
-        if(e.key === "key") {
-            handleSendMessage();
+        if(e.key === "Enter") {
+            sendmessage(message);
         }
     };
 
     return(
         <React.Fragment>
-            <div>
-                <span>{ username }</span>
-                <input 
+            <div
+                className={styles.userinput}
+            >
+                <input
+                    className={styles.inputBoard}
                     value={`${message}`}
                     onChange={ updatemessage }
                     onKeyPress={ handleKeyPress }
                     placeholder={`Tying something...`}
                 />
-                <button
+                {/* <button
                     onClick={handleSendMessage}
-                >{ `Send` }</button>
+                >{ `Send` }</button> */}
             </div>
         </React.Fragment>
     );
