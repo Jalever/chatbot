@@ -1,3 +1,3 @@
-type updateMessage = React.SyntheticEvent<{ value: String }>;
+type updateMessage = React.SyntheticEvent<{ value: string }>;
 
 export default updateMessage;

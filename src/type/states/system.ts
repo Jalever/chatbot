@@ -1,5 +1,5 @@
 export interface SystemState{
-    loggedIn: Boolean,
-    session: String,
-    username: String
+    loggedIn: boolean;
+    session: string;
+    username: string;
 };

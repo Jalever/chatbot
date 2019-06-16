@@ -1,9 +1,9 @@
 export interface Message {
-    username: String,
-    message: String,
-    timestamp: Number
+    username: string;
+    message: string;
+    timestamp: number;
 };
 
 export interface ChatState {
-    messages: Message[]
+    messages: Message[];
 };

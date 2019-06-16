@@ -19,7 +19,7 @@ const {
     useEffect
 } = React;
 
-const App:React.FunctionComponent<AppProps> = (props: AppProps) => {
+const App: React.FunctionComponent<AppProps> = (props: AppProps) => {
     let [message, setMessage] = useState("");
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const App:React.FunctionComponent<AppProps> = (props: AppProps) => {
         setMessage(`${event.currentTarget.value}`);
     };
 
-    let onSendMessage = (message: String) => {
+    let onSendMessage = (message: string) => {
         props.SendMessage({
             username: props.session.username,
             message: message,

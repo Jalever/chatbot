@@ -14,7 +14,7 @@ export function SendMessage(newMessage: Message) {
     }
 };
 
-export function DeleteMessage(timestamp : Number) {
+export function DeleteMessage(timestamp: number) {
     return {
         type: DELETE_MESSAGE,
         payload: {

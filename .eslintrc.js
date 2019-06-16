@@ -1,16 +1,3 @@
-## Tech Stack
-- Typescript
-- React
-
-## Updates
-#### June 16th, 2019
-```console
-npm i -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react
-```
-
-create `.eslintrc.js`
-
-```js
 module.exports = {
     parser: "@typescript-eslint/parser", // Specifies the ESLint parser
     extends: [
@@ -35,22 +22,3 @@ module.exports = {
         }
     }
 };
-```
-
-```console
-npm i -D prettier eslint-config-prettier eslint-plugin-prettier
-```
-
-create `.prettierrc.js`
-
-```js
-module.exports = {
-  semi: true,
-  trailingComma: "all",
-  singleQuote: true,
-  printWidth: 120,
-  tabWidth: 4
-};
-```
-
-add `lint : eslint '*/**/*.{js,ts,tsx}` in `package.json`

@@ -8,15 +8,15 @@ import {
 } from "@type/states/chat";
 
 interface SendMessage {
-    type: typeof SEND_MESSAGE,
-    payload: Message
+    type: typeof SEND_MESSAGE;
+    payload: Message;
 };
 
 interface DeleteMessage {
-    type: typeof DELETE_MESSAGE,
+    type: typeof DELETE_MESSAGE;
     payload: {
-        timestamp: Number
-    }
+        timestamp: number;
+    };
 };
 
 export type ChatActionTypes = SendMessage | DeleteMessage;
