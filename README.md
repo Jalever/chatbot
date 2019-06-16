@@ -1,0 +1,3 @@
+## Tech Stack
+- Typescript
+- React
